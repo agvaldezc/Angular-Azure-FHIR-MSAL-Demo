@@ -1,0 +1,13 @@
+<ng-container *ngIf='user'>
+    <h1>Welcome {{ user.name }}<button (click)='logout()'>Logout</button></h1>
+    <p>Email: {{ user.displayableId }}</p>
+    
+    <div id='all-patients'>
+        <h2>All Patients</h2>
+        <pre *ngFor="let patient of patients | async as list">{{ patient | json }}</pre>
+    </div>
+    
+    <div id='create-patient'>
+        <h2>Create Patient</h2>
+    </div>
+</ng-container>
